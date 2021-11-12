@@ -11,50 +11,46 @@
 </head>
 <body>
    
-   <header>
-      <div class="container d-flex justify-content-center">
-         <img class="logo" src="img/logo-boolean.png" alt="Logo Boolean">
-      </div>
-   </header>
+   <div id="app">
 
-   <main>
-      <div class="container">
-         <!-- area testo da aggiungere -->
-         <div class="add-area">
-            <input type="text" class="form-control text_input">
-            <button class="btn btn-primary btn_custom">Aggiungi</button>
+      <header>
+         <div class="container d-flex justify-content-center">
+            <img class="logo" src="img/logo-boolean.png" alt="Logo Boolean">
          </div>
-         
-         <!-- area lista -->
-         <section>
-            <div class="todo-list">
-               <ul>
-                  <li>
-                     <p class="m-0">Cosa da fare</p>
-                     <i class="fas fa-minus-circle"></i> <!-- icona per rimuovere -->
-                  </li>
-                  <li>
-                     <p class="m-0">Cosa da fare</p>
-                     <i class="fas fa-minus-circle"></i> 
-                  </li>
-                  <li>
-                     <p class="m-0">Cosa da fare</p>
-                     <i class="fas fa-minus-circle"></i> 
-                  </li>
-                  <li>
-                     <p class="m-0">Cosa da fare</p>
-                     <i class="fas fa-minus-circle"></i> 
-                  </li>
-                  <li>
-                     <p class="m-0">Cosa da fare</p>
-                     <i class="fas fa-minus-circle"></i> 
-                  </li>
-               </ul>
+      </header>
+   
+      <main>
+         <div class="container">
+            <!-- area testo da aggiungere -->
+            <div class="add-area">
+               <input type="text" class="form-control text_input">
+               <button class="btn btn-primary btn_custom">Aggiungi</button>
             </div>
-         </section>
+            
+            <!-- area lista -->
+            <section>
+               <div class="todo-list">
+                  <ul>
+                     <li
+                        v-for="item in toDoList"
+                        :class="{'todo-done': (item.done)}"
+                        @click="item.done = !item.done"
+                     >
+                        <p 
+                           class="m-0"
+                           :class="{'todo-done': (item.done)}"
+                        > {{ item.text }} </p>
+                        <i class="fas fa-minus-circle"></i> <!-- icona per rimuovere -->
+                     </li>
+                  </ul>
+               </div>
+            </section>
+   
+         </div>
+      </main>
 
-      </div>
-   </main>
+   </div>
+   
 
 
    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

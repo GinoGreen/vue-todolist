@@ -39,7 +39,6 @@ section {
 .todo-list {
    width: 70%;
    min-width: 400px;
-   padding: 0 20px;
 
    border-radius: 10px;
 
@@ -52,7 +51,7 @@ ul {
    list-style: none;
 }
 ul li {
-   padding: 10px;
+   padding: 10px 30px;
 
    display: flex;
    justify-content: space-between;
@@ -76,4 +75,13 @@ li .fa-minus-circle {
 }
 li .fa-minus-circle:hover {
    color: #e63232;
+}
+
+li.todo-done {
+   border-radius: 10px;
+   background-color: #dfdfdf;
+}
+p.todo-done {
+   color: silver;
+   text-decoration: line-through;
 }
